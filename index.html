@@ -21,10 +21,12 @@
                'default blur', debounce: { 'default':500, 'blur': 0} }"
                ng-minlength="1">
         <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
+        <label for='result'>You searched for: {{searchCtrl.searchTerm}}</label>
       </form>
       <ul class="list-group">
         <li ng-repeat="user in searchCtrl.searchResult.items">
-          <img ng-src="{{user.avatar_url}}&s=50">
+          <img ng-src="{{user.avatar_url}}&s=50" ng-style="{'width': '100px',
+          'height': '100px'}">
           <a ng-href="{{user.html_url}}">{{user.login}}</a>
         </li>
       </ul>
